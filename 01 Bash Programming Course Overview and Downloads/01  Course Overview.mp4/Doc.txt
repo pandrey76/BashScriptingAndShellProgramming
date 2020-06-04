@@ -1,0 +1,23 @@
+
+Shell Scripting Course Overview
+
+Course Overview
+
+    * Exactly how to get started writing shell scripts;
+    * What the shebang is and why every one of your scripts need ones;
+    * How to create and use variables;
+    * Testing and decision making.
+
+    * Command line argument     processing;
+    * Input and output, include user input;
+    * If statements;
+    * Exit statuses;
+    * Functions.
+
+    * Wildcards;
+    * For loops;
+    * Case statements;
+    * Logging;
+    * Debugging tips;
+    * Bash shell options;
+    * More.
