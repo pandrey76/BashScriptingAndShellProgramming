@@ -1,0 +1,7 @@
+
+    Introduction to Shell Scripting
+
+        * The next 2 videos are really important!!!;
+        * Later, you'll learn more about each topic;
+        * You'll also learn about other topics;
+        * Rewatch the next 2 videos.

@@ -34,3 +34,14 @@ BashScriptingAndShellProgramming
 
                 shell-scripting-course/debugging/lessons
                 shell-scripting-course/debugging/practice-exercises
+
+    02 Shell Scripting in a Nutshell
+
+        01  Section 1 Introduction.mp4
+
+            Introduction to Shell Scripting
+
+                * The next 2 videos are really important!!!;
+                * Later, you'll learn more about each topic;
+                * You'll also learn about other topics;
+                * Rewatch the next 2 videos.
