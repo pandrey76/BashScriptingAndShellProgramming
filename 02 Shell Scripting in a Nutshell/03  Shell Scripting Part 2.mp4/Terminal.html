@@ -1,47 +1,4 @@
-<pre><font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~</b></font>$ cd work
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work</b></font>$ cd Education
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education</b></font>$ cd Linux
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux</b></font>$ cd BashScriptingAndShellProgramming
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming</b></font>$ cd &quot;02 Shell Scripting in a Nutshell&quot;
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell</b></font>$ cd &quot;02  Shell Scripting Part I.mp4&quot;
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ chmod 755 script.sh
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ ./script.sh
-Scripting is fun!
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ chmod 755 sleepy.sh
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ ./sleepy.sh
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ ./sleepy.sh &amp;
-[1] 12685
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ ps -fp 12462
-UID        PID  PPID  C STIME TTY          TIME CMD
-admin1   12685  7273  0 13:32 pts/0    00:00:00 /bin/bash ./sleepy.sh
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ ./sleepy.sh &amp;
-[1] 12685
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ ps -fp 12685
-UID        PID  PPID  C STIME TTY          TIME CMD
-admin1   12685  7273  0 13:32 pts/0    00:00:00 /bin/bash ./sleepy.sh
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ ps -ef | grep 12685 | grep -v grep
-admin1   12685  7273  0 13:32 pts/0    00:00:00 /bin/bash ./sleepy.sh
-admin1   12686 12685  0 13:32 pts/0    00:00:00 sleep 90
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ pstree -p 12685
-sleepy.sh(12685)───sleep(12686)
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ chmod 755 hi.py
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ ./hi.py
-This is a Python script.
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ chmod 755 variable1.sh
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ ./variable1.sh
-I like the bash shell.
-I like the bash shell.
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ chmod 755 variable2.sh
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ ./variable2.sh
-I am bashing on my keyboard.
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ chmod 755 variable3.sh
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ ./variable3.sh
-I am  on my keyboard.
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ chmod 755 variable4.sh
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ ./variable4.sh
-You are running this script on ubuntu18.
-<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ cd ../
+<pre><font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/02  Shell Scripting Part I.mp4</b></font>$ cd ../
 <font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell</b></font>$ cd &quot;03  Shell Scripting Part 2.mp4&quot;
 <font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/03  Shell Scripting Part 2.mp4</b></font>$ cd Scripts
 <font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/02 Shell Scripting in a Nutshell/03  Shell Scripting Part 2.mp4/Scripts</b></font>$ chmod 755 condition1.sh
