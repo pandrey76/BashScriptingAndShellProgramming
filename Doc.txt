@@ -28,3 +28,9 @@ BashScriptingAndShellProgramming
                 * Bash shell options;
                 * More.
 
+        02  Course Downloads.mp4
+
+            Download Layout
+
+                shell-scripting-course/debugging/lessons
+                shell-scripting-course/debugging/practice-exercises
