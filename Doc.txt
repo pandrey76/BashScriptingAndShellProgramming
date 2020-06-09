@@ -552,3 +552,135 @@ BashScriptingAndShellProgramming
 
             Comments start with #.
             Use read to accept input.
+
+    03 Return Codes and Exit Statuses
+
+        01  Exit Statuses and Return Codes.mp4
+
+        Exit Statuses and Return Codes.
+
+    What You Will Learn.
+        * How to check the exit status of a command;
+        * How to make decisions based on the status;
+        * How to use exit statuses in your own scripts.
+
+
+    Exit Status/Return Code
+        * Every command returns an exit status;
+        * range from 0 to 255;
+        * 0 = success;
+        * Other than 0 = error condition;
+        * Use for error checking;
+        * Use man or info to find meaning of exit status.
+
+    Checking the Exit Status
+        * $? contains the return code of the previously executed command.
+
+        $ ls /not/here
+        > ls: невозможно получить доступ к '/not/here': Нет такого файла или каталога
+        $ echo "$?"
+        > 2
+
+        ping1.sh
+
+            #!/bin/bash
+            HOST="google.com"
+            ping -c 1 $HOST
+            # shellcheck disable=SC2181
+            if [ "$?" -ne "0" ]
+            then
+                echo "$HOST unreachable."
+            fi
+
+        $ chmod 755 ping1.sh
+        $ ./ping1.sh
+        > ping: google.com: Неизвестное имя или служба
+        > google.com unreachable.
+
+        ping2.sh
+
+            #!/bin/bash
+            HOST="google.com"
+            ping -c 1 $HOST
+            RETURN_CODE=$?
+            if [ "$RETURN_CODE" -ne "0" ]
+            then
+                echo "$HOST unreachable."
+            fi
+
+        $ chmod 755 ping2.sh
+        $ ./ping2.sh
+        > ping: google.com: Неизвестное имя или служба
+        > google.com unreachable.
+
+    &&=AND
+        * &&=AND
+            $ mkdir /tmp/bak $$ cp test.txt /tmp/bak      # Not work
+        * ||=OR
+            $ cp test.txt /tmp/bak/ || cp test.txt /tmp
+
+        ping3.sh
+
+            #!/bin/bash
+            HOST="google.com"
+            ping -c 1 $HOST && echo "$HOST reachable."
+
+        $ chmod 755 ping3.sh
+        $ ./ping3.sh
+        > ping: google.com: Неизвестное имя или служба
+
+        ping4.sh
+
+            #!/bin/bash
+            HOST="google.com"
+            ping -c 1 $HOST || echo "$HOST unreachable."
+
+        $ chmod 755 ping4.sh
+        $ ./ping4.sh
+        > ping: google.com: Неизвестное имя или служба
+        > google.com unreachable.
+
+    The semicolon
+        * Separate commands with a semicolon to ensure they all get executed.
+            $ cp test.txt /tmp/bak/ ; cp test.txt /tmp
+             # Same as:
+            $ cp test.txt /tmp/bak/
+            $ cp test.txt /tmp
+
+    Exit Command
+        * Explicitly define the return code
+            - exit 0
+            - exit 1
+            - exit 2
+            - exit 255
+            - etc..
+        * The default value is that of the last command executed.
+
+        ping5.sh
+
+            #!/bin/bash
+            HOST="google.com"
+            ping -c 1 $HOST
+            # shellcheck disable=SC2181
+            if [ "$?" -ne "0" ]
+            then
+                echo "$HOST unreachable."
+                exit 1
+            fi
+            exit 0
+
+        $ chmod 755 ping5.sh
+        $ ./ping5.sh
+        > ping: google.com: Неизвестное имя или служба
+        > google.com unreachable.
+
+    Summary
+        * All command return an exit status;
+        * 0 - 255;
+        * 0 = success;
+        * Other than 0 = error condition;
+        * $? contains the exit status;
+        * Decision making -if, &&, ||;
+        * exit.
+
+

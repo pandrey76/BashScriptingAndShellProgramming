@@ -1,0 +1,34 @@
+<pre><font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4</b></font>$ ls /not/here
+ls: невозможно получить доступ к &apos;/not/here&apos;: Нет такого файла или каталога
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4</b></font>$ echo &quot;$?&quot;
+2
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4</b></font>$ cd Scripts
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4/Scripts</b></font>$ chmod 755 ping1.sh
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4/Scripts</b></font>$ ./ping1.sh
+ping: google.com: Неизвестное имя или служба
+google.com unreachable.
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4/Scripts</b></font>$ chmod 755 ping2.sh
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4/Scripts</b></font>$ ./ping2.sh
+ping: google.com: Неизвестное имя или служба
+google.com unreachable.
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4/Scripts</b></font>$ mkdir /tmp/bak $$ cp test.txt /tmp/bak
+mkdir: невозможно создать каталог «12301»: Файл существует
+mkdir: невозможно создать каталог «cp»: Файл существует
+mkdir: невозможно создать каталог «test.txt»: Файл существует
+mkdir: невозможно создать каталог «/tmp/bak»: Файл существует
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4/Scripts</b></font>$ cp test.txt /tmp/bak/ || cp test.txt /tmp
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4/Scripts</b></font>$ chmod 755 ping3.sh
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4/Scripts</b></font>$ ./ping3.sh
+ping: google.com: Неизвестное имя или служба
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4/Scripts</b></font>$ chmod 755 ping4.sh
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4/Scripts</b></font>$ ./ping4.sh
+ping: google.com: Неизвестное имя или служба
+google.com unreachable.
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4/Scripts</b></font>$ cp test.txt /tmp/bak/ ; cp test.txt /tmp
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4/Scripts</b></font>$ cp test.txt /tmp/bak/
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4/Scripts</b></font>$ cp test.txt /tmp
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4/Scripts</b></font>$ chmod 755 ping5.sh
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/01  Exit Statuses and Return Codes.mp4/Scripts</b></font>$ ./ping5.sh
+ping: google.com: Неизвестное имя или служба
+google.com unreachable.
+</pre>
