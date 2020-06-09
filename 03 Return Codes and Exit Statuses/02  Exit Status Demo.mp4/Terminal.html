@@ -1,0 +1,45 @@
+<pre><font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~/work/Education/Linux/BashScriptingAndShellProgramming/03 Return Codes and Exit Statuses/02  Exit Status Demo.mp4</b></font>$ cd ~
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~</b></font>$ ping -c 1 google.com
+PING google.com(lg-in-x71.1e100.net (2a00:1450:4010:c08::71)) 56 data bytes
+64 bytes from lg-in-x71.1e100.net (2a00:1450:4010:c08::71): icmp_seq=1 ttl=107 time=78.2 ms
+
+--- google.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 78.291/78.291/78.291/0.000 ms
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~</b></font>$ echo $?
+0
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~</b></font>$ ping -c 1 -W 1 amazon.com
+PING amazon.com (176.32.103.205) 56(84) bytes of data.
+64 bytes from 176.32.103.205: icmp_seq=1 ttl=230 time=214 ms
+
+--- amazon.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 214.762/214.762/214.762/0.000 ms
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~</b></font>$ echo $?
+0
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~</b></font>$ ping -c 1 -W 1 amazon.com.blah
+ping: amazon.com.blah: Неизвестное имя или служба
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~</b></font>$ echo $?
+2
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~</b></font>$ man ping
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~</b></font>$ mkdir /tmp/jason/bak &amp;&amp; cp -v /etc/hosts /tmp/jason/bak
+mkdir: невозможно создать каталог «/tmp/jason/bak»: Нет такого файла или каталога
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~</b></font>$ echo $?
+1
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~</b></font>$ mkdir -p  /tmp/jason/bak &amp;&amp; cp -v /etc/hosts /tmp/jason/bak
+&apos;/etc/hosts&apos; -&gt; &apos;/tmp/jason/bak/hosts&apos;
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~</b></font>$ cp -v /etc/hosts /tmp/bak/ || cp -v /etc/hosts /tmp/
+&apos;/etc/hosts&apos; -&gt; &apos;/tmp/bak/hosts&apos;
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~</b></font>$ cp -v /etc/hosts /tmp/ || cp -v /etc/hosts /tmp/bak/
+&apos;/etc/hosts&apos; -&gt; &apos;/tmp/hosts&apos;
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~</b></font>$ ls /etc/linux-release ; hostname
+ls: невозможно получить доступ к &apos;/etc/linux-release&apos;: Нет такого файла или каталога
+ubuntu18
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~</b></font>$ ls /etc/hosts ; hostname
+/etc/hosts
+ubuntu18
+<font color="#8AE234"><b>admin1@ubuntu18</b></font>:<font color="#729FCF"><b>~</b></font>$ ls /etc/hosts ; hostname ; uptime
+/etc/hosts
+ubuntu18
+ 17:40:06 up  7:15,  1 user,  load average: 0,26, 0,22, 0,20
+</pre>

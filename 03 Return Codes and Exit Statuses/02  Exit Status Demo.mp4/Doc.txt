@@ -1,0 +1,47 @@
+
+    Exit Status Demo.
+
+$ ping -c 1 google.com
+> PING google.com(lg-in-x71.1e100.net (2a00:1450:4010:c08::71)) 56 data bytes
+> 64 bytes from lg-in-x71.1e100.net (2a00:1450:4010:c08::71): icmp_seq=1 ttl=107 time=78.2 ms
+>
+> --- google.com ping statistics ---
+> 1 packets transmitted, 1 received, 0% packet loss, time 0ms
+> rtt min/avg/max/mdev = 78.291/78.291/78.291/0.000 ms
+> admin1@ubuntu18:~$ echo $?
+> 0
+> admin1@ubuntu18:~$ ping -c 1 -W 1 amazon.com
+> PING amazon.com (176.32.103.205) 56(84) bytes of data.
+> 64 bytes from 176.32.103.205: icmp_seq=1 ttl=230 time=214 ms
+>
+> --- amazon.com ping statistics ---
+> 1 packets transmitted, 1 received, 0% packet loss, time 0ms
+> rtt min/avg/max/mdev = 214.762/214.762/214.762/0.000 ms
+> admin1@ubuntu18:~$ echo $?
+> 0
+$ ping -c 1 -W 1 amazon.com.blah
+> ping: amazon.com.blah: Неизвестное имя или служба
+$ echo $?
+> 2
+$ man ping  # See when maybe this exit code possible
+$ mkdir /tmp/jason/bak && cp -v /etc/hosts /tmp/jason/bak
+> mkdir: невозможно создать каталог «/tmp/jason/bak»: Нет такого файла или каталога
+$ echo $?
+> 1
+$ mkdir -p  /tmp/jason/bak && cp -v /etc/hosts /tmp/jason/bak
+> '/etc/hosts' -> '/tmp/jason/bak/hosts'
+$ cp -v /etc/hosts /tmp/bak/ || cp -v /etc/hosts /tmp/
+> '/etc/hosts' -> '/tmp/bak/hosts'
+> $ cp -v /etc/hosts /tmp/ || cp -v /etc/hosts /tmp/bak/
+> '/etc/hosts' -> '/tmp/hosts'
+
+$ ls /etc/linux-release ; hostname
+> ls: невозможно получить доступ к '/etc/linux-release': Нет такого файла или каталога
+> ubuntu18
+$ ls /etc/hosts ; hostname
+> /etc/hosts
+> ubuntu18
+$ ls /etc/hosts ; hostname ; uptime
+> /etc/hosts
+> ubuntu18
+> 17:40:06 up  7:15,  1 user,  load average: 0,26, 0,22, 0,20
