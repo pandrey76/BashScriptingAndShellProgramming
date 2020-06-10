@@ -1,0 +1,108 @@
+
+    Functions Part 2.
+
+    Exit Status(Return Codes)
+        * Functions have an exit status;
+        * Explicitly:
+            - return <RETURN_CODE>.
+        * Implicitly:
+            - The exit status of the last command executed in the function.
+        * Valid exit codes range from 0 to 255;
+        * 0 = success;
+        * $? = the exit status.
+
+        my_function
+        echo $?
+
+        ##################################################################
+        $# - общее количество параметров переданных скрипту
+        $* - все аргументы переданыне скрипту(выводятся в строку)
+        $@ - тоже самое, что и предыдущий, но параметры выводятся в столбик
+        $! - PID последнего запущенного в фоне процесса
+        $$ - PID самого скрипта
+        ##################################################################
+
+        function1.sh
+
+            #!/bin/bash
+            function backup_file ()
+            {
+                if [ -f $1 ]
+                then
+                    BACK="/tmp/$(basename ${1}).$(date +%F).$$"
+                    echo "Backing up $1 to ${BACK}"
+                    cp $1 $BACK
+                fi
+            }
+
+            backup_file /etc/hosts
+            if [ $? -eq 0 ]
+            then
+                echo "Backup succeeded!"
+            fi
+
+        >$ chmod 755 function1.sh
+        >$ ./function1.sh
+        >Backing up /etc/hosts to /tmp/hosts.2020-06-10.9200
+        >Backup succeeded!
+
+        function2.sh
+
+            #!/bin/bash
+            function backup_file ()
+            {
+                if [ -f $1 ]
+                then
+                    local BACK="/tmp/$(basename ${1}).$(date +%F).$$"
+                    echo "Backing up $1 to ${BACK}"
+                    # The exit status of the function will
+                    # be the exit status of the cp command.
+                    cp $1 $BACK
+                else
+                    # The file does not exist.
+                    return 1
+                fi
+            }
+
+        >$ chmod 755 function1.sh
+        >$ ./function1.sh
+        >Backing up /etc/hosts to /tmp/hosts.2020-06-10.10308
+
+       function3.sh
+
+            #!/bin/bash
+            function backup_file ()
+            {
+                if [ -f $1 ]
+                then
+                    local BACK="/tmp/$(basename ${1}).$(date +%F).$$"
+                    echo "Backing up $1 to ${BACK}"
+                    # The exit status of the function will
+                    # be the exit status of the cp command.
+                    cp $1 $BACK
+                else
+                    # The file does not exist.
+                    return 1
+                fi
+            }
+            backup_file /etc/hosts
+
+            # Make a decision based on the exit status.
+            if [ $? -eq 0 ]
+            then
+                echo "Backup succeeded!"
+            else
+                echo "Backup failed!"
+                # About the script and return a non-zero exit status.
+                exit 1
+            fi
+        >$ chmod 755 function3.sh
+        >$ ./function3.sh
+        >Backing up /etc/hosts to /tmp/hosts.2020-06-10.10551
+        >Backup succeeded!
+
+    Summary
+        * DRY;
+        * Global and local variables;
+        * Parameters;
+        * Exit statuses.
