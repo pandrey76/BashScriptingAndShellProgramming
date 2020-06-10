@@ -5,6 +5,6 @@
             now
         }
         function now()  {
-            echo "It's $(date)"
+            echo "It's $(date +%r)"
         }
         hello
