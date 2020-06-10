@@ -1,0 +1,165 @@
+
+    Functions, Part I
+
+    What You Will Learn
+        * Why to use functions;
+        * How to create them;
+        * How to use them;
+        * Variable scope;
+        * Function Parameters;
+        * Exit statuses and return codes.
+
+    Why use functions? (Keep it DRY!)
+        * Don't repeat yourself! Don't repeat yourself!
+        * Write once, use many times;
+        * Reduces script length;
+        * Single place to edit and troubleshoot;
+        * Easier to maintain.
+
+    Functions
+        * If you're repeating yourself, use a function;
+        * Reusable code;
+        * Must be defined before use;
+        * Has parameter support.
+
+    Creating a function
+        function function-name()    {
+            # Code goes here.
+        }
+
+        function-name() {
+            # Code goes here.
+        }
+
+    Calling a function
+
+        function1.sh
+
+            #!/bin/bash
+            function hello()    {
+                echo    "Hello!"
+            }
+            hello
+
+        $ chmod 755 function1.sh
+        $ ./function1.sh
+        >Hello!
+
+    Functions can call other functions.
+
+        function2.sh
+
+            #!/bin/bash
+            function hello()    {
+                echo    "Hello!"
+                now
+            }
+            function now()  {
+                echo "It's $(date)"
+            }
+            hello
+
+        $ chmod 755 function2.sh
+        $ ./function2.sh
+
+        >Hello!
+        >It's Ср июн 10 10:01:27 MSK 2020
+
+    DoNot do this...
+
+        function3.sh
+
+            #!/bin/bash
+            function hello()    {
+                echo    "Hello!"
+                now
+            }
+            hello
+            function now()  {
+                echo "It's $(date)"
+            }
+
+        $ chmod 755 function3.sh
+        $ ./function3.sh
+        >Hello!
+        >./function3.sh: строка 5: now: команда не найдена
+
+    Position Parameters
+        * Functions can accept parameters;
+        * The first parameter is stor ed in $1;
+        * The second parameter is stored in $2, etc.
+        * $@ contains all of the parameters;
+        * Just like shell scripts.
+            $0 = the script itself, not function name.
+
+        function4.sh
+
+            #!/bin/bash
+            function hello()    {
+                echo    "Hello! $1"
+            }
+
+        $ chmod 755 function4.sh
+        $ ./function4.sh
+        >Hello! Jason
+
+        function5.sh
+
+            #!/bin/bash
+            function hello()
+            {
+                # shellcheck disable=SC2068
+                for NAME in $@
+                do
+                    echo    "Hello! $NAME"
+                done
+            }
+            hello Jason Dan Ryan
+
+        >Hello! Jason
+        >Hello! Dan
+        >Hello! Ryan
+
+    Variable Scope
+        * By default, variables are global;
+        * Variables have to be defined before used.
+
+        ###########################################
+        GLOBAL_VAR=1
+        # GLOBAL_VAR is available in the function.
+        my_function
+        ###########################################
+        # GLOBAL_VAR is NOT available in the function.
+        my_function
+        GLOBAL_VAR=1
+        ###########################################
+
+        function6.sh
+
+            #!/bin/bash
+            my_function()
+            {
+                GLOBAL_VAR=1
+            }
+            # GLOBAL_VAR not available yet.
+            echo $GLOBAL_VAR
+            my_function
+            # GLOBAL_VAR is now available.
+            echo $GLOBAL_VAR
+
+        >$ chmod 755 function6.sh
+        >$ ./function6.sh
+        >
+        >1
+
+    Local Variables
+        * Can only be access within the function;
+        * Create using the local keyword.
+            - local LOCAL_VAR=1;
+        * Only function can have local variables;
+        * Best practice to keep variables local in functions.
+
+
+
+
+
