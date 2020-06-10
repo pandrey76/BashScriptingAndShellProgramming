@@ -1002,5 +1002,23 @@ $ ls /etc/hosts ; hostname ; uptime
         * Parameters;
         * Exit statuses.
 
+05 Shell Script Checklist and Template
+
+   01  Shell Script Checklist and Template.mp4
+
+    Shell Script Order and Checklist
+        1. Shebang - последовательность из двух символов: решётки и восклицательного знака ("#!"):
+            a. #!/bin/bash.
+        2. Comments/file header (information):
+            a. Version of script;
+            b. Author;
+            c. ...
+        3. Global variables;
+        4. Functions:
+            a. Use local variables.
+        5. Main script contents;
+        6. Exit with an exit status:
+            a. exit <STATUS> at various exit points.
+
 
 
