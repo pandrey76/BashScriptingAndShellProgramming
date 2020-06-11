@@ -1020,5 +1020,74 @@ $ ls /etc/hosts ; hostname ; uptime
         6. Exit with an exit status:
             a. exit <STATUS> at various exit points.
 
+06 Wildcards
+
+    01  Introduction to Wildcards.mp4
+
+    02  Wildcard Introduction, Part I.mp4
+
+    Wildcards Part 1.
+
+    What You Will Learn
+        * What wildcards are;
+        * When and where they can be used;
+        * The different types of wildcards;
+        * How to use wildcards with various command.
+
+    Wildcards
+        * A character or string used for pattern matching;
+        * Globing expands the wildcard pattern into a list of files and/or directories. (paths);
+        * Wildcard can be used with most commands:
+            - ls;
+            - rm;
+            - cp.
+
+        * * - matches zero or more characters:
+            - *.txt;
+            - a*;
+            - a*.txt.
+        * ? - matches exactly one character:
+            - ?.txt;
+            - a?;
+            - a?.txt.
+
+    More Wildcard - Character Classes
+        * [] - A character class:
+            - Matches any the characters included between the brackets. Matches exactly one character.
+            - [aeiou];
+            - ca[nt]*
+                + can
+                + cat
+                + candy
+                + catch
+        * [!] - Matches any of the characters NOT included between the brackets. Matches exactly one character.
+            - [!aeiou]*
+                + baseball
+                + cricket
+
+    More Wildcards - Ranges
+        * Use two characters separated by a hyphen to create a range in character class.
+        * [a-g]*
+            - Matches all files that start with a, b, c, d, e, f, g.
+        * [3-6]*
+            - Matches all files that start with 3, 4, 5, 6.
+
+    Named Character Classes
+        * [[:alpha:]] - соответствует любому алфавитному символу, записанному в верхнем или нижнем регистре;
+        * [[:alnum:]] - соответствует любому алфавитно-цифровому символу, а именно — символам в диапазонах 0-9, A-Z, a-z;
+        * [[:blank:]] — соответствует пробелу и знаку табуляции;
+        * [[:digit:]] - юбой цифровой символ от 0 до 9;
+        * [[:upper:]] - алфавитные символы в верхнем регистре — A-Z;
+        * [[:lower:]] - алфавитные символы в нижнем регистре — a-z;
+        * [[:print:]] — соответствует любому печатаемому символу;
+        * [[:punct:]] — соответствует знакам препинания;
+        * [[:space:]] - пробельные символы, в частности — пробел, знак табуляции, символы NL, FF, VT, CR.
+
+    Matching Wildcard patterns
+        * '\' - escape character. Use you want to match a wildcard character.
+            - Match all files that end with a question mark:
+                - *\?
+                    - Example "done?".
+
 
 
