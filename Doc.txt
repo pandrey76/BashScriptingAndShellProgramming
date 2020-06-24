@@ -1090,4 +1090,85 @@ $ ls /etc/hosts ; hostname ; uptime
                     - Example "done?".
 
 
+03  Wildcard Introduction, Part II.mp4
+
+Wildcards Part 2.
+
+admin1@X53S-I5-UbuntuV19-K53SV:~$ cd ~
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls -F
+ a           c     jazz.mp3   work/        Изображения/     Шаблоны/
+ ab.txt      cot   music/     Видео/       Музыка/
+ b           e     notes/     Документы/   Общедоступные/
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls *.txt
+ab.txt  test.txt
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls ab.txt a.txt b.txt songs.txt test.txt
+ls: невозможно получить доступ к 'a.txt': Нет такого файла или каталога
+ls: невозможно получить доступ к 'b.txt': Нет такого файла или каталога
+ls: невозможно получить доступ к 'songs.txt': Нет такого файла или каталога
+ab.txt  test.txt
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls a*
+a  ab.txt
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls a*.txt
+ab.txt
+ admin1@X53S-I5-UbuntuV19-K53SV:~$ ls a*t
+ab.txt
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls ?
+a  b  c  e  g
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls ??
+ls: невозможно получить доступ к '??': Нет такого файла или каталога
+admin1@X53S-I5-UbuntuV19-K53SV:~$ cd notes
+admin1@X53S-I5-UbuntuV19-K53SV:~/notes$ ls ??
+aa  bb
+admin1@X53S-I5-UbuntuV19-K53SV:~/notes$ cd ../
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls a?.txt
+ab.txt
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls a*.txt
+ab.txt
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls -l a*
+-rw-r--r-- 1 admin1 admin1 0 июн 25 01:06 a
+-rw-r--r-- 1 admin1 admin1 0 июн 25 01:06 ab.txt
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls c[aeiou]t
+cot
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls c[eioau]t
+cot
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls c[ueoai]t
+cot
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls [a-d]*
+a  ab.txt  b  blues.mp3  c  cot
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls *[[:digit:]]
+blues.mp3  jazz.mp3
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls
+ a           c     jazz.mp3   work        Изображения     Шаблоны
+ ab.txt      cot   music      Видео       Музыка
+ b           e     notes      Документы   Общедоступные
+ blues.mp3   g     test.txt   Загрузки   'Рабочий стол'
+admin1@X53S-I5-UbuntuV19-K53SV:~$ mv *.txt notes
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls
+ a           c     g          notes   Документы     Музыка          Шаблоны
+ b           cot   jazz.mp3   work    Загрузки      Общедоступные
+ blues.mp3   e     music      Видео   Изображения  'Рабочий стол'
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls notes
+aa  ab.txt  a.txt  bb  b.txt  cat  d  f  h  test.txt
+admin1@X53S-I5-UbuntuV19-K53SV:~$ mv *.mp3 music/
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls music
+blues.mp3  jazz.mp3  songs.txt
+admin1@X53S-I5-UbuntuV19-K53SV:~$ ls
+ a   cot   music   Видео       Изображения    'Рабочий стол'
+ b   e     notes   Документы   Музыка          Шаблоны
+ c   g     work    Загрузки    Общедоступные
+admin1@X53S-I5-UbuntuV19-K53SV:~$ cd notes
+admin1@X53S-I5-UbuntuV19-K53SV:~/notes$ ls
+aa  ab.txt  a.txt  bb  b.txt  cat  d  f  h  test.txt
+admin1@X53S-I5-UbuntuV19-K53SV:~/notes$ ls ??
+aa  bb
+admin1@X53S-I5-UbuntuV19-K53SV:~/notes$ rm ??
+admin1@X53S-I5-UbuntuV19-K53SV:~/notes$ ls
+ab.txt  a.txt  b.txt  cat  d  f  h  test.txt
+
+    Summary:
+        - *
+        - ?
+        - []
+        - [0-3]
+        - [[:digit:]]
 

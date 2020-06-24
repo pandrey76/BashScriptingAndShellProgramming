@@ -1,0 +1,71 @@
+<pre><font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ cd ~
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls -F
+ a           c     <font color="#06989A">jazz.mp3</font>   <font color="#3465A4"><b>work</b></font>/        <font color="#3465A4"><b>Изображения</b></font>/     <font color="#3465A4"><b>Шаблоны</b></font>/
+ ab.txt      cot   <font color="#3465A4"><b>music</b></font>/     <font color="#3465A4"><b>Видео</b></font>/       <font color="#3465A4"><b>Музыка</b></font>/
+ b           e     <font color="#3465A4"><b>notes</b></font>/     <font color="#3465A4"><b>Документы</b></font>/   <font color="#3465A4"><b>Общедоступные</b></font>/
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls *.txt
+ab.txt  test.txt
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls ab.txt a.txt b.txt songs.txt test.txt
+ls: невозможно получить доступ к &apos;a.txt&apos;: Нет такого файла или каталога
+ls: невозможно получить доступ к &apos;b.txt&apos;: Нет такого файла или каталога
+ls: невозможно получить доступ к &apos;songs.txt&apos;: Нет такого файла или каталога
+ab.txt  test.txt
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls a*
+a  ab.txt
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls a*.txt
+ab.txt
+ <font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls a*t
+ab.txt
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls ?
+a  b  c  e  g
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls ??
+ls: невозможно получить доступ к &apos;??&apos;: Нет такого файла или каталога
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ cd notes
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~/notes</b></font>$ ls ??
+aa  bb
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~/notes</b></font>$ cd ../
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls a?.txt
+ab.txt
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls a*.txt
+ab.txt
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls -l a*
+-rw-r--r-- 1 admin1 admin1 0 июн 25 01:06 a
+-rw-r--r-- 1 admin1 admin1 0 июн 25 01:06 ab.txt
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls c[aeiou]t
+cot
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls c[eioau]t
+cot
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls c[ueoai]t
+cot
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls [a-d]*
+a  ab.txt  b  <font color="#06989A">blues.mp3</font>  c  cot
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls *[[:digit:]]
+<font color="#06989A">blues.mp3</font>  <font color="#06989A">jazz.mp3</font>
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls
+ a           c     <font color="#06989A">jazz.mp3</font>   <font color="#3465A4"><b>work</b></font>        <font color="#3465A4"><b>Изображения</b></font>     <font color="#3465A4"><b>Шаблоны</b></font>
+ ab.txt      cot   <font color="#3465A4"><b>music</b></font>      <font color="#3465A4"><b>Видео</b></font>       <font color="#3465A4"><b>Музыка</b></font>
+ b           e     <font color="#3465A4"><b>notes</b></font>      <font color="#3465A4"><b>Документы</b></font>   <font color="#3465A4"><b>Общедоступные</b></font>
+ <font color="#06989A">blues.mp3</font>   g     test.txt   <font color="#3465A4"><b>Загрузки</b></font>   <font color="#3465A4"><b>&apos;Рабочий стол&apos;</b></font>
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ mv *.txt notes
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls
+ a           c     g          <font color="#3465A4"><b>notes</b></font>   <font color="#3465A4"><b>Документы</b></font>     <font color="#3465A4"><b>Музыка</b></font>          <font color="#3465A4"><b>Шаблоны</b></font>
+ b           cot   <font color="#06989A">jazz.mp3</font>   <font color="#3465A4"><b>work</b></font>    <font color="#3465A4"><b>Загрузки</b></font>      <font color="#3465A4"><b>Общедоступные</b></font>
+ <font color="#06989A">blues.mp3</font>   e     <font color="#3465A4"><b>music</b></font>      <font color="#3465A4"><b>Видео</b></font>   <font color="#3465A4"><b>Изображения</b></font>  <font color="#3465A4"><b>&apos;Рабочий стол&apos;</b></font>
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls notes
+aa  ab.txt  a.txt  bb  b.txt  cat  d  f  h  test.txt
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ mv *.mp3 music/
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls music
+<font color="#06989A">blues.mp3</font>  <font color="#06989A">jazz.mp3</font>  songs.txt
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ ls
+ a   cot   <font color="#3465A4"><b>music</b></font>   <font color="#3465A4"><b>Видео</b></font>       <font color="#3465A4"><b>Изображения</b></font>    <font color="#3465A4"><b>&apos;Рабочий стол&apos;</b></font>
+ b   e     <font color="#3465A4"><b>notes</b></font>   <font color="#3465A4"><b>Документы</b></font>   <font color="#3465A4"><b>Музыка</b></font>          <font color="#3465A4"><b>Шаблоны</b></font>
+ c   g     <font color="#3465A4"><b>work</b></font>    <font color="#3465A4"><b>Загрузки</b></font>    <font color="#3465A4"><b>Общедоступные</b></font>
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~</b></font>$ cd notes
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~/notes</b></font>$ ls
+aa  ab.txt  a.txt  bb  b.txt  cat  d  f  h  test.txt
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~/notes</b></font>$ ls ??
+aa  bb
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~/notes</b></font>$ rm ??
+<font color="#4E9A06"><b>admin1@X53S-I5-UbuntuV19-K53SV</b></font>:<font color="#3465A4"><b>~/notes</b></font>$ ls
+ab.txt  a.txt  b.txt  cat  d  f  h  test.txt
+</pre>
